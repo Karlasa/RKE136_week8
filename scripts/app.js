@@ -1,11 +1,15 @@
-let moviePoster = document.querySelector(".movie-poster");
+let getMoviePoster = document.querySelector(".movie-poster");
+let getMovieTitle = document.querySelector(".movie-title");
 let modal = document.querySelector("#myModal");
 let closeBtn = document.querySelector(".closeBtn");
 let modalImage = document.querySelector(".movie-poster-modal");
+let modalTitle = document.querySelector(".movie-title-modal");
+let footerYear = document.querySelector(".year");
 
-moviePoster.addEventListener("click", () => {
+getMoviePoster.addEventListener("click", () => {
   modal.style.display = "block";
-  modalImage.src = moviePoster.src;
+  modalImage.src = getMoviePoster.src;
+  modalTitle.textContent = getMovieTitle.textContent;
 });
 
 closeBtn.addEventListener("click", () => {
@@ -17,3 +21,5 @@ window.addEventListener("click", (e) => {
     modal.style.display = "none";
   }
 });
+
+footerYear.textContent = new Date().getFullYear();
